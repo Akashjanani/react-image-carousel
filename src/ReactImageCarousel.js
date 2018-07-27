@@ -61,12 +61,15 @@ class Carousel extends React.Component{
 	}
 	render(){
 		let images = this.props.images || [];
+		let imageLabels = this.props.imageLabels || [];
 		let cImage = images[this.state.currentId];
+		let cLabel = imageLabels[this.state.currentId];
 		return (
 			<div className="carousel">
 				<div className="carousel-main" alt="">
 					<TransitionGroup className=''>
 						<Fade key={this.state.currentId}>
+							<h3 className="text-center">{cLabel}</h3>
 							<img src={cImage} key={cImage}  />
 						</Fade>	
 					</TransitionGroup>
